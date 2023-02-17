@@ -51,5 +51,6 @@ def one_place(pk: int, db: Session = Depends(get_db)):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="192.168.12.1", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+#    uvicorn.run(app, host="192.168.12.1", port=8000)
 
