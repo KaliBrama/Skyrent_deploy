@@ -1,7 +1,14 @@
+import { useNavigate } from 'react-router-dom'
 import * as S from './StyleHeader'
 import LogoImg from '../../images/logo.svg'
 
 function Header() {
+  const navigate = useNavigate()
+
+  const handleAbout = () => {
+    navigate('/About', { replace: true })
+  }
+
   return (
     <S.Header>
       <div className="logo">
@@ -9,7 +16,7 @@ function Header() {
           <img src={LogoImg} alt="Logo" />
         </a>
       </div>
-      <S.About>
+      <S.About onClick={handleAbout}>
         <p>О проекте</p>
       </S.About>
     </S.Header>
