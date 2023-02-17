@@ -14,4 +14,5 @@ export const About = styled.div`
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
+  cursor: pointer;
 `
