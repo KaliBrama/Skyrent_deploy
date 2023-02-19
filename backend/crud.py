@@ -5,5 +5,10 @@ from models import LockalModel
 def get_from_pk(db: Session, pk: int):
     return db.query(LockalModel).filter(LockalModel.pk == pk).first()
 
-def get_places(db: Session):
-    return db.query(LockalModel).all()
+def get_places(db: Session, *args, **kwargs):
+    result = db.query(LockalModel)
+    if kwargs["city"]:
+        result = result.filter(LockalModel.city == kwargs["city"])
+    if kwargs["frome"] and kwargs["to"]:
+        result = result.filter(LockalModel.price.between(kwargs["frome"], kwargs["to"]))
+    return result.all()

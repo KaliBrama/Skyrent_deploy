@@ -1,8 +1,8 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query, Response
 from models import LockalModel, Base
 from database import SessionLocal, engine
 from fastapi.middleware.cors import CORSMiddleware
-from typing import Any, List
+from typing import Any, List, Optional
 from sqlalchemy.orm import Session
 from fastapi import Depends, FastAPI
 from schemas import LocationSchema
@@ -37,8 +37,9 @@ def get_db():
 
 
 @app.get("/places/", response_model=List[LocationSchema])
-def all_places(db: Session = Depends(get_db)):
-    places = get_places(db)
+def all_places(db: Session = Depends(get_db), city: Optional[str] = Query(None, alias="city"), frome: Optional[int] = Query(None, alias="from"), to: Optional[int] = Query(None, alias="to")):
+    filters = {"city": city, "frome": frome, "to": to}
+    places = get_places(db, **filters)
     return places
 
 
