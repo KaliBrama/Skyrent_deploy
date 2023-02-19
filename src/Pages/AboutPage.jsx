@@ -1,6 +1,7 @@
 import LogoImg from '../images/logo.svg'
 import Vector from '../images/vector.svg'
 import * as S from './StylesPage'
+import Todos from "../Blocks/Json/Json"; 
 
 function AboutPage() {
   return (
@@ -29,6 +30,8 @@ function AboutPage() {
         <S.Students>QA @arinchev00</S.Students>
       </div>
       <S.Footer>
+        <Todos />
+
         <div className="logo">
           <a href="./">
             <img src={LogoImg} alt="Logo" />

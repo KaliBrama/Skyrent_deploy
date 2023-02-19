@@ -43,7 +43,7 @@ def all_places(db: Session = Depends(get_db), city: Optional[str] = Query(None, 
     return places
 
 
-@app.get("/places/{pk}", response_model=LocationSchema)
+@app.get("{pk}", response_model=LocationSchema)
 def one_place(pk: int, db: Session = Depends(get_db)):
     db_places = get_from_pk(db, pk=pk)
     if db_places is None:
