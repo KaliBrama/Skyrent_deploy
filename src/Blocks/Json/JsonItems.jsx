@@ -1,17 +1,21 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import * as S from './StyleJson'
+import * as S from './StyleJsonItems'
 
 function AxiosGet() {
+  const navigate = useNavigate()
+
+  const handleItem = () => {
+    navigate('/Item', { replace: true })
+  }
+
   const [listingData, setListingData] = useState(null)
 
   useEffect(() => {
     axios
-
       .get('https://skyrent-production-21dc.up.railway.app/places/')
-
       .then((response) => setListingData(response.data))
-
       .catch((error) => console.log(error))
   }, [])
 
@@ -22,11 +26,11 @@ function AxiosGet() {
   return (
     <div>
       {listingData.map((list) => (
-        <S.ItemWrapper>
-          <S.ImgItem src={list.picture_url} alt="Item-1" />
+        <S.ItemWrapper onClick={handleItem}>
+          <S.ImgItem src={list.picture_url} alt="{list.country} " />
           <S.LocationWrapper>
             <S.Location>{list.country}</S.Location>
-            <p>→</p>
+            <p>→ </p>
             <S.Location>{list.city}</S.Location>
           </S.LocationWrapper>
           <S.TextItem>{list.description}</S.TextItem>

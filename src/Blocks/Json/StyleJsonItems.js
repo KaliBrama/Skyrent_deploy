@@ -14,6 +14,7 @@ export const LocationWrapper = styled.div`
   margin-top: 25px;
   margin-bottom: 17px;
   gap: 5px;
+  cursor: pointer;
 `
 
 export const Location = styled.h2`

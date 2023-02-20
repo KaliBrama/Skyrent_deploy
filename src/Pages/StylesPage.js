@@ -53,3 +53,21 @@ export const Year = styled.p`
   opacity: 0.25;
   padding-top: 3px;
 `
+export const PriceRent = styled.p`
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 17px;
+  display: flex;
+  align-items: flex-end;
+  color: #000000;
+`
+export const AboutItem = styled.p`
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  color: #000000;
+  opacity: 0.5;
+`
