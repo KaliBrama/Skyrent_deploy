@@ -6,7 +6,6 @@ export const Header = styled.div`
   align-items: center;
   gap: 25px;
 `
-export const TextBlockAbout = styled.div``
 
 export const TextAbout = styled.p`
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
@@ -70,4 +69,98 @@ export const AboutItem = styled.p`
   line-height: 26px;
   color: #000000;
   opacity: 0.5;
+`
+export const Location = styled.h1`
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+  font-family: 'Roboto';
+  font-size: 26px;
+  line-height: 30px;
+  color: #000000;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  padding-bottom: 28px;
+`
+export const Description = styled.p`
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  color: #000000;
+  opacity: 0.5;
+  margin-top: 21px;
+  margin-bottom: 21px;
+`
+
+export const ImgItem = styled.img`
+  width: 372px;
+  haight: 389px;
+`
+export const Features = styled.div`
+  margin-top: 39px;
+`
+
+export const FeaturesTitle = styled.h2`
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+`
+export const InfoButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 372px;
+  height: 49px;
+  background: #d9d9d9;
+  border-radius: 4px;
+  margin-top: 27px;
+  margin-bottom: 30px;
+  cursor: pointer;
+`
+export const Text = styled.p`
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+  font-family: 'Roboto';
+  font-style: normal;
+  font-size: 18px;
+  line-height: 17px;
+  color: #000000;
+`
+export const InfoWrapper = styled.div`
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  width: 368px;
+  height: 276px;
+`
+export const InfoTitle = styled.p`
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+  font-family: 'Roboto';
+  font-size: 18px;
+  line-height: 26px;
+  color: #000000;
+  opacity: 0.5;
+  margin-bottom: 6px;
+`
+
+export const InfoText = styled.p`
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+  font-family: 'Roboto';
+  font-size: 26px;
+  line-height: 30px;
+  color: #000000;
+`
+export const NameBlock = styled.div`
+  margin-top: 22px;
+  margin-left: 19px;
+  margin-bottom: 24px;
+`
+export const PhoneBlock = styled.div`
+  margin-bottom: 20px;
+  margin-left: 19px;
+`
+export const AdressBlock = styled.div`
+  margin-left: 19px;
 `

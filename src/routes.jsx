@@ -8,8 +8,7 @@ function AppRoutes() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/About" element={<AboutPage />} />
-      {/* <Route path="/Item/" element={<ItemPage />} /> */}
-      <Route path="/Item/:pk" element={<ItemPage />} />
+      <Route path="/item/:pk" element={<ItemPage />} />
     </Routes>
   )
 }
