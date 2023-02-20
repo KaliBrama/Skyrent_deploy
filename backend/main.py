@@ -43,7 +43,7 @@ def all_places(db: Session = Depends(get_db), city: Optional[str] = Query(None, 
     return places
 
 
-@app.get("{pk}", response_model=LocationSchema)
+@app.get("/places/{pk}", response_model=LocationSchema)
 def one_place(pk: int, db: Session = Depends(get_db)):
     db_places = get_from_pk(db, pk=pk)
     if db_places is None:
@@ -53,5 +53,3 @@ def one_place(pk: int, db: Session = Depends(get_db)):
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
-#    uvicorn.run(app, host="192.168.12.1", port=8000)
-
