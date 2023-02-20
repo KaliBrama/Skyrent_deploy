@@ -1,15 +1,9 @@
 import { useState, useEffect } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import * as S from './StyleJsonItems'
 
 function AxiosGet() {
-  const navigate = useNavigate()
-
-  const handleItem = () => {
-    navigate('/Item', { replace: true })
-  }
-
   const [listingData, setListingData] = useState(null)
 
   useEffect(() => {
@@ -25,18 +19,20 @@ function AxiosGet() {
   return (
     <div>
       {listingData.map((list) => (
-        // <S.ItemWrapper onClick={handleItem}>
-        <S.ItemWrapper onClick={handleItem}>
-          <S.ImgItem src={list.picture_url} alt="{list.country} " />
-          <S.LocationWrapper>
-            <Link className="link" key={list.pk} to={`/Item/${list.pk}`}>
+        <S.ItemWrapper>
+          <Link key={list.pk} to={`/item/${list.pk}`}>
+            <S.ImgItem src={list.picture_url} alt="{list.country} " />
+
+            <S.LocationWrapper>
               <S.Location>
                 {list.country} → {list.city}
               </S.Location>
-            </Link>
-          </S.LocationWrapper>
-          <S.TextItem>{list.description}</S.TextItem>
-          <S.Rent>$ {list.price} / month</S.Rent>
+            </S.LocationWrapper>
+
+            <S.TextItem>{list.description}</S.TextItem>
+
+            <S.Rent>$ {list.price} / month</S.Rent>
+          </Link>
         </S.ItemWrapper>
       ))}
     </div>
